@@ -3,4 +3,9 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "articles#index"
+  namespace :account_block do
+    resources :accounts 
+    resources :users 
+    post "/login" , to: "users#login"
+  end
 end
